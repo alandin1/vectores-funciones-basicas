@@ -39,13 +39,28 @@ function gIzq(vector){
 }
 
 function invertir(vector){
-    
+    let tamañoV = vector.length-1
+    let iteraciones = Math.round(tamañoV/2)
+    let nIzq = vector[0]
+    let nDer = vector[tamañoV]
+    let i = 0
+    while(i<iteraciones){
+        vector[tamañoV] = nIzq
+        vector[i] = nDer
+        tamañoV-=1
+        i++
+        nIzq = vector[i]
+        nDer = vector[tamañoV]
+    }
 }
 
 let vector = []
-llenar(vector, 7)
+llenar(vector, 5)
 mostrar(vector)
 gDerecha(vector)
 mostrar(vector)
 gIzq(vector)
 mostrar(vector)
+invertir(vector)
+mostrar(vector)
+    
